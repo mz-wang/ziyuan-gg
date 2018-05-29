@@ -1,0 +1,27 @@
+{
+  "name": "ziyuan-gg",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "start": "caddy -conf config/caddyfile.local",
+    "start-production": "caddy -conf config/caddyfile",
+    "build": "npm run clean && elm-make src/Main.elm --output .build/app.js --debug --warn --yes",
+    "build-production": "npm run clean && elm-make src/Main.elm --output .build/app.js --yes",
+    "clean": "rm -rf .build/",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mz-wang/ziyuan-gg.git"
+  },
+  "author": "Ziyuan Wang (mz-wang)",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/mz-wang/ziyuan-gg/issues"
+  },
+  "homepage": "https://github.com/mz-wang/ziyuan-gg#readme",
+  "dependencies": {
+    "normalize.css": "^8.0.0"
+  }
+}
