@@ -1,27 +1,30 @@
 {
   "name": "ziyuan-gg",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.html",
-  "scripts": {
-    "start": "caddy -conf config/caddyfile.local",
-    "start-production": "caddy -conf config/caddyfile",
-    "build": "npm run clean && elm-make src/Main.elm --output .build/app.js --debug --warn --yes",
-    "build-production": "npm run clean && elm-make src/Main.elm --output .build/app.js --yes",
-    "clean": "rm -rf .build/",
-    "test": "test"
-  },
+  "author": "Ziyuan Wang",
+  "license": "BSD-3-Clause",
+  "private": true,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mz-wang/ziyuan-gg.git"
   },
-  "author": "Ziyuan Wang (mz-wang)",
-  "license": "BSD-3-Clause",
-  "bugs": {
-    "url": "https://github.com/mz-wang/ziyuan-gg/issues"
+  "scripts": {
+    "build": "npx webpack --config=config/webpack.production.js --verbose",
+    "watch": "npx webpack-dev-server --config=config/webpack.development.js --hot"
   },
-  "homepage": "https://github.com/mz-wang/ziyuan-gg#readme",
   "dependencies": {
     "normalize.css": "^8.0.0"
+  },
+  "devDependencies": {
+    "clean-webpack-plugin": "^0.1.19",
+    "css-loader": "^0.28.11",
+    "elm-hot-loader": "^0.5.4",
+    "elm-webpack-loader": "^4.5.0",
+    "style-loader": "^0.21.0",
+    "uglifyjs-webpack-plugin": "^1.2.5",
+    "webpack": "^4.10.2",
+    "webpack-cli": "^2.1.4",
+    "webpack-dev-server": "^3.1.4",
+    "webpack-merge": "^4.1.2"
   }
 }
